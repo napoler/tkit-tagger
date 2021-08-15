@@ -47,7 +47,7 @@ setup(
 
 
     # ],
-    packages=['Demo'])
+    packages=['tkitTagger'])
 
 """
 pip freeze > requirements.txt
