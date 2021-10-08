@@ -1,5 +1,8 @@
-# 一个创建库的demo
-便于快速创建自己的第三方库
+# tkitTagger
+
+快速标记库
+
+https://docs.terrychan.org/tkit-tagger
 
 
 ## CRF
