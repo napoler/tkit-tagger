@@ -11,6 +11,12 @@ pip install -U Sphinx
 #https://sphinx-book-theme.readthedocs.io/en/latest/index.html
 pip install sphinx-book-theme
 pip install sphinx_rtd_theme
+pip install torch
+pip install pytorch-lightning>=1.4.0
+pip install  tkitAutoTokenizerPosition
+pip install pytorch-crf>=0.7.2
+pip install transformers>=4.9.2
+pip install tkitJson>=0.0.0.3
 
 
 # https://github.com/lotharschulz/sphinx-pages
@@ -27,6 +33,7 @@ rm -rf ./source/res/
 #扫描目录 Demo
 sphinx-apidoc -o ./source/res ../tkitTagger
 
+
 #编译成为html
 #make html
 #sphinx-autobuild ./source ../docs --open-browser
@@ -36,9 +43,14 @@ sphinx-build -b html ./source ../docs
 
 cp ./.nojekyll ../docs
 
-# 推送命令
-cd ../
-git add .
-git commit -m "auto更新文档"
-git pull
-git push
+
+pwd
+
+ls ../docs
+
+# # 推送命令
+# cd ../
+# git add .
+# git commit -m "auto更新文档"
+# git pull
+# git push

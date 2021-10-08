@@ -3,7 +3,30 @@ from setuptools import find_packages, setup
 from os import path as os_path
 import time
 
-from config import *
+# from config import *
+
+
+
+name='tkitTagger'#修改包名字-
+version='0.0.0.2 '+str(time.time())[:8]
+description='Terry toolkit tkitTagger'
+author='Terry Chan'
+author_email='napoler2008@gmail.com'
+url='http://docs.terrychan.org/tkit-tagger/'
+
+copyright = '2021, Terry Chan'
+language = 'zh_cn'
+
+
+
+
+
+
+
+
+
+
+
 this_directory = os_path.abspath(os_path.dirname(__file__))
 """帮助[https://www.notion.so/6bade2c6a5f4479f82a4e67eafcebb3a]
 
@@ -39,14 +62,17 @@ setup(
     author=author,
     author_email=author_email,
     url=url,
-    install_requires=read_requirements('requirements.txt'),  # 指定需要安装的依赖
+    # install_requires=read_requirements('requirements.txt'),  # 指定需要安装的依赖
     long_description=long_description,
     long_description_content_type="text/markdown",
-    # install_requires=[
-    #     # 'beautifulsoup4==4.7.1',
+    install_requires=[
+        'pytorch-lightning>=1.4.0',
+        'tkitAutoTokenizerPosition>=0.0.0.3',
+        'pytorch-crf>=0.7.2',
+        'transformers>=4.9.2',
+        'tkitJson>=0.0.0.3',
 
-
-    # ],
+    ],
     packages=['tkitTagger'])
 
 """

@@ -14,7 +14,7 @@ import torch.optim as optim
 from tqdm.auto import tqdm
 import torchmetrics
 
-from tkitbilstm import BiLSTMAttention as Bilstm
+# from tkitbilstm import BiLSTMAttention as Bilstm
 from torchcrf import CRF
 
 
@@ -44,9 +44,9 @@ class autoModel(pl.LightningModule):
         #                   dim=self.hparams.hidden_size,
         #                   n_hidden=self.hparams.hidden_size,out_num_classes=self.hparams.out_num_classes,embedding_enabled=True,
         #                   attention=False)
-        self.embedding = nn.Embedding(vocab_size, hidden_size)
+        self.embedding = nn.Embedding(vocab_size, hidden_size,padding_idx=0)
         self.model=nn.LSTM(hidden_size,hidden_size,dropout=dropout,
-                           num_layers=6,
+                           num_layers=2,
                            batch_first=False,
                            bidirectional=True
         )
