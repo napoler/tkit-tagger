@@ -115,7 +115,9 @@ for i,tag in enumerate( tags):
 # print(tags)
 textTensor=tokenizer(texts, padding="max_length",max_length=MaxLen,  truncation=True,return_tensors="pt")
 tagsTensor=torch.Tensor(tags)
-myDataset=TensorDataset(textTensor["input_ids"],textTensor["token_type_ids"],textTensor["attention_mask"],tagsTensor)
+
+#myDataset=TensorDataset(textTensor["input_ids"],textTensor["token_type_ids"],textTensor["attention_mask"],tagsTensor)
+myDataset=TensorDataset(textTensor["input_ids"],textTensor["attention_mask"],tagsTensor,textTensor["attention_mask"])
 # print(textTensor)
 
 # torch.save(myDataset,"out/dataset.bin")
