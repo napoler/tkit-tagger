@@ -102,6 +102,7 @@ class autoModel(pl.LightningModule):
         # training_step defined the train loop.
         # It is independent of forward
         x,x_attention_mask,y,y_attention_mask = batch
+        y=y.long()
         pred,loss  = self(x,y,x_attention_mask,y_attention_mask,decode=True)
 #         print("outputs",outputs.size())
         acc=self.accuracy(torch.Tensor(pred).to(self.device).view(-1), y.reshape(-1))
@@ -115,6 +116,7 @@ class autoModel(pl.LightningModule):
         # training_step defined the train loop.
         # It is independent of forward
         x,x_attention_mask,y,y_attention_mask = batch
+        y=y.long()
         pred,loss  = self(x,y,x_attention_mask,y_attention_mask,decode=True)
 #         print("outputs",outputs.size())
         acc=self.accuracy(torch.Tensor(pred).to(self.device).view(-1), y.reshape(-1))
