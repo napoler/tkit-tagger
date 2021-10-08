@@ -81,7 +81,7 @@ class autoModel(pl.LightningModule):
         # print(x.size())
         
         
-        loss = self.decoder (x, y,reduction="token_mean")
+        loss = self.decoder (x, y.long(),reduction="token_mean")
         loss=loss*-1
         if decode:
             pred=self.decoder.decode(x)
