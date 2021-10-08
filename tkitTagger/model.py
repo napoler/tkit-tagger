@@ -105,7 +105,7 @@ class autoModel(pl.LightningModule):
         y=y.int()
         pred,loss  = self(x,y,x_attention_mask,y_attention_mask,decode=True)
 #         print("outputs",outputs.size())
-        acc=self.accuracy(torch.Tensor(pred).to(self.device).view(-1), y.reshape(-1))
+        acc=self.accuracy(torch.Tensor(pred).to(self.device).view(-1).int(), y.reshape(-1))
         metrics = {"val_acc": acc, "val_loss": loss}
         # print(pred)
         # metrics = { "val_loss": loss}
@@ -119,7 +119,7 @@ class autoModel(pl.LightningModule):
         y=y.int()
         pred,loss  = self(x,y,x_attention_mask,y_attention_mask,decode=True)
 #         print("outputs",outputs.size())
-        acc=self.accuracy(torch.Tensor(pred).to(self.device).view(-1), y.reshape(-1))
+        acc=self.accuracy(torch.Tensor(pred).to(self.device).view(-1).int(),y.reshape(-1))
         metrics = {"test_acc": acc, "test_loss": loss}
         self.log_dict(metrics)
         return metrics
