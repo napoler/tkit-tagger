@@ -11,6 +11,10 @@ tkitTagger采用最经典的Bilstm+crf方案,用来解决序列标注问题.
 并没有使用更复杂的Bert等方案,后期会加入更多的方案.
 
 
+代码托管:
+https://github.com/napoler/tkit-tagger/
+
+
 
 .. toctree::
    :maxdepth: 2
