@@ -1,0 +1,21 @@
+tkitTagger package
+==================
+
+Submodules
+----------
+
+tkitTagger.model module
+-----------------------
+
+.. automodule:: tkitTagger.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: tkitTagger
+   :members:
+   :undoc-members:
+   :show-inheritance:
